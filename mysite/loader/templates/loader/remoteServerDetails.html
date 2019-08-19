@@ -1,0 +1,14 @@
+{% extends 'loader/index.html' %}
+{% load crispy_forms_tags %}
+
+{% block main %}
+{% if remote_server %}
+    <ul>
+        <p>Remote Server: {{remote_server.remote_server_ip}}</p>
+        <p>Port: {{remote_server.port}}</p>
+        <p>Activity: {{remote_server.is_active}}</p>
+    </ul>
+{% else %}
+    <p>No Remote Server with this id.</p>
+{% endif %}
+{% endblock %}
